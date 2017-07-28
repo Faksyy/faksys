@@ -39,8 +39,41 @@ Route::get('/{nama}/{sekolah}/{umur}', function($nama,$sekolah,$umur) {
 	'<br>Sekolah :'.$sekolah.
 	'<br>Umur ku :'.$umur;
 });
-Route::get('/nama/{halaman}', function($a='Jhon')
+Route::get('/nama/{halaman}', function($a)
  {
  	$a = '<b>Jhon<b>';
 	return 'Ini Halaman About '.$a;
+});
+
+Route::get('testmodel', function(){
+	$a = App\Post::all();
+	return $a;
+});
+Route::get('testmodel1', function(){
+	$a = App\Post::find(1);
+	return $a;
+});
+Route::get('testmodel2', function(){
+	$a = App\Post::where('title','like','%ciri keluarga sakinah%')->get();
+	return $a;
+});
+Route::get('testmodel3', function(){
+	$a = App\Post::find(1);
+	$a->title = "Ciri Keluarga Sakinah";
+	$a->save();
+	return $a;
+});
+Route::get('testmodell', function(){
+	$a = App\Post::find(1);
+	$a->delete();
+});
+Route::get('testmodelll', function(){
+	$a = new App\Post;
+	$a->title = "7 Amalan Pembuka Jodoh";
+	$a->content = "Shalat malam, sedekah, puasa sunah, silaturahmi, senyum, dan tobat";
+	$a->save();
+	return $a;
+});
+Route::get('cektampilan', function(){
+	return view('layouts.master');
 });
