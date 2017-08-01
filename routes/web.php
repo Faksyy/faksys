@@ -99,3 +99,4 @@ Route::get('/coba3', 'MyController@tampilview');
 Route::get('/coba4', 'MyController@percobaan');
 
 Route::resource('orangtua', 'OrangtuaController');
+Route::resource('siswa', 'SiswaController');

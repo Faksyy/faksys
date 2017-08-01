@@ -11,6 +11,7 @@
     	  <table class="table">
     	  	<thead>
     	  		<tr>
+                <th>No</th>
     	  			<th>Nama Ayah</th>
     	  			<th>Nama Ibu</th>
     	  			<th>Umur Ayah</th>
@@ -23,6 +24,7 @@
     	  	<tbody>
     	  		@foreach($ortu as $data)
     	  		<tr>
+                <td>{{$data->id}}</td>
     	  			<td>{{$data->nama_ayah}}</td>
     	  			<td>{{$data->nama_ibu}}</td>
 					<td>{{$data->umur_ayah}}</td>
@@ -35,10 +37,10 @@
                     </td>
 					<td>
                     
-					<a class="btn btn-warning" href="/orangtua/{{$data->id}}/edit">Edit</a> </td>
+					<a class="btn btn-success" href="/orangtua/{{$data->id}}/edit">Edit</a> </td>
                     <td>
                     
-                    <a class="btn btn-success" href="/orangtua/{{$data->id}}">Show</a> </td>
+                    <a class="btn btn-primary" href="/orangtua/{{$data->id}}">Show</a> </td>
 					<td>
                     <form action="{{route('orangtua.destroy',$data->id)}}" method="post">
 						
